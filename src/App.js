@@ -3,6 +3,7 @@ import styled, { createGlobalStyle } from 'styled-components';
 import Navigation from './components/Navigation';
 import Hero from './components/Hero';
 import CompanyStats from './components/CompanyStats';
+import Contact from './components/Contact';
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -18,7 +19,7 @@ const GlobalStyle = createGlobalStyle`
   }
   
   body {
-    background: #ffffff;
+    background: #000;
   }
 `;
 
@@ -27,8 +28,11 @@ const App = () => {
     <>
       <GlobalStyle />
       <Navigation />
-      <Hero />
+      <div id="hero">
+        <Hero />
+      </div>
       <CompanyStats />
+      <Contact />
     </>
   );
 };

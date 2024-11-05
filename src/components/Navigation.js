@@ -7,22 +7,23 @@ const Nav = styled.nav`
   left: 0;
   right: 0;
   height: 70px;
-  background: rgba(255, 255, 255, 0.98);
+  background: rgba(0, 0, 0, 0.95);
   backdrop-filter: blur(20px);
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 48px;
   z-index: 1000;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 `;
 
 const Logo = styled.div`
   font-size: 24px;
   font-weight: 700;
-  background: linear-gradient(45deg, #0066FF, #5200FF);
+  background: linear-gradient(45deg, #fff, #666);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  cursor: pointer;
 `;
 
 const NavLinks = styled.div`
@@ -30,26 +31,41 @@ const NavLinks = styled.div`
   gap: 32px;
   
   a {
-    color: #1d1d1f;
+    color: #fff;
     text-decoration: none;
     font-size: 16px;
-    transition: color 0.2s;
+    transition: all 0.2s;
+    opacity: 0.8;
+    cursor: pointer;
     
     &:hover {
-      color: #0066FF;
+      opacity: 1;
+      color: #fff;
     }
   }
 `;
 
 const Navigation = () => {
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    const navHeight = 70; // Height of the navigation bar
+    
+    if (element) {
+      const elementPosition = element.offsetTop - navHeight;
+      window.scrollTo({
+        top: elementPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
     <Nav>
-      <Logo>CRH</Logo>
+      <Logo onClick={() => scrollToSection('hero')}>CRH</Logo>
       <NavLinks>
-        <a href="#home">Home</a>
-        <a href="#companies">Companies</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
+        <a onClick={() => scrollToSection('hero')}>Home</a>
+        <a onClick={() => scrollToSection('crh-development')}>Companies</a>
+        <a onClick={() => scrollToSection('contact')}>Contact</a>
       </NavLinks>
     </Nav>
   );
