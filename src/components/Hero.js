@@ -123,7 +123,9 @@ const Hero = () => {
           transition={{ duration: 1, delay: 0.6 }}
         >
           <CompanyLink 
-            href="#crh-development" 
+            href="https://crhdevelopment.netlify.app/" 
+            target="_blank"
+            rel="noopener noreferrer"
             className="primary"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}

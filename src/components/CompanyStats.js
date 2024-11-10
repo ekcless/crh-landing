@@ -166,8 +166,14 @@ const CompanyStats = () => {
             viewport={{ once: true }}
             style={{ textAlign: 'center' }}
           >
-            <CompanyLink href="#" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              Learn More
+            <CompanyLink 
+              href="https://crhdevelopment.netlify.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.05 }} 
+              whileTap={{ scale: 0.95 }}
+            >
+              Visit Website
             </CompanyLink>
           </motion.div>
         </Content>
@@ -195,8 +201,8 @@ const CompanyStats = () => {
             viewport={{ once: true }}
           >
             <StatItem whileHover={{ scale: 1.05 }}>
-              <StatNumber>10k+</StatNumber>
-              <StatLabel>Active Users</StatLabel>
+              <StatNumber>1k+</StatNumber>
+              <StatLabel>Active Projects</StatLabel>
             </StatItem>
             <StatItem whileHover={{ scale: 1.05 }}>
               <StatNumber>5k+</StatNumber>
